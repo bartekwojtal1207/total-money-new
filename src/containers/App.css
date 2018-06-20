@@ -115,10 +115,10 @@ body .container {
   border-bottom-color: green;
 }
 
-.contact .contact__form .contact__form__input:focus + .contact__form__input_label {
-  position: relative;
-  top: -52px;
-  font-size: 12px; }
+.contact .contact__form .contact__form__input:focus + span .contact__form__input_label {
+  position: relative !important;
+  top: -52px !important;
+  font-size: 12px !important; }
 .contact__form__input_label_focused {
   position: relative;
   top: -52px;
@@ -142,6 +142,11 @@ body .container {
 .contact .contact__form .contact__form__check_wrapper .form-check {
   border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
   margin-bottom: 3px;
+  opacity: 0;
+  cursor: pointer;
+  /* left: 22px; */
+
+  z-index: 2;
   padding-bottom: 2px; }
 .form-check.error-form-check {
   border-bottom-color: red !important;
@@ -163,15 +168,16 @@ body .container {
   top: 2px;
   z-index: 2; }
 .contact .contact__form .contact__form__check_wrapper .contact__form__check_wrapper__fake_checkbox {
-  position: absolute;
-  top: 5px;
+  position: relative;
+  top: -18px;
   left: 0;
   height: 15px;
   width: 15px;
+  display: block;
   background-color: #FFF;
   border: 1px solid rgba(0, 0, 0, 0.15); }
 .checkbox-error {
-  position: absolute;
+  position: relative;
   top: 5px;
   left: 0;
   height: 15px;
@@ -183,7 +189,7 @@ body .container {
   cursor: pointer; }
 .contact .contact__form .contact__form__check_wrapper .contact__form__check_wrapper__fake_checkbox:after {
   content: "";
-  position: absolute;
+  position: relative;
   display: none; }
 .contact .contact__form .contact__form__check_wrapper .contact__form__check_wrapper__fake_checkbox:after {
   left: 4px;
@@ -196,7 +202,7 @@ body .container {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg); }
 
-.contact .contact__form input:checked ~ .contact__form__check_wrapper__fake_checkbox:after {
+.contact .contact__form input:checked + .contact__form__check_wrapper__fake_checkbox:after {
   display: block; }
 
 .link-more {

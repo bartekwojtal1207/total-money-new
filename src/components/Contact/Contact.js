@@ -81,6 +81,19 @@ class Contact extends Component {
                     valid: false,
                     touched: false
                 },
+                agreements: {
+                    elementType: 'checkbox',
+                    elementConfig: {
+                        type: 'checkbox',
+                        desc: 'Wyrażam zgodę na przetwarzanie'
+                    },
+                    value: '',
+                    validation: {
+                        required: true
+                    },
+                    valid: false,
+                    touched: false
+                }
             }
         }
     }
@@ -155,7 +168,7 @@ class Contact extends Component {
             });
         }
 
-        const input = <form action="" className={'contact__form'}>
+        const form = <form action="" className={'contact__form'}>
             {formElementsArray.map(formElement => (
                 <Input
                     key={formElement.id}
@@ -166,7 +179,6 @@ class Contact extends Component {
                     shouldValidate={formElement.config.validation}
                     touched={formElement.config.touched}
                     errorMessage={this.state.errorMessage}
-                    label={formElement.config.elementConfig.desc}
                     changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
                 <Button >WYŚLIJ</Button>
@@ -204,13 +216,10 @@ class Contact extends Component {
                         Poznaj szczegóły oferty dla Ciebie <br />Już nawet w 10 minut !
                     </ContactTitle>
 
-                        {input}
+                        {form}
                         <div className="contact__form__check_wrapper">
                             {/*{checbkox}*/}
                         </div>
-
-
-
                 </section>
             </div>
         )
