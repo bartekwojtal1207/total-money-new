@@ -31,7 +31,7 @@ class Contact extends Component {
                     elementType: 'input',
                     elementConfig: {
                         type: 'text',
-                        placeholder: 'Imię'
+                        desc: 'Imię'
                     },
                     value: '',
                     validation: {
@@ -44,7 +44,7 @@ class Contact extends Component {
                     elementType: 'input',
                     elementConfig: {
                         type: 'text',
-                        placeholder: 'Nazwisko'
+                        desc: 'Nazwisko'
                     },
                     value: '',
                     validation: {
@@ -57,7 +57,7 @@ class Contact extends Component {
                     elementType: 'input',
                     elementConfig: {
                         type: 'phone',
-                        placeholder: 'Telefon'
+                        desc: 'Telefon'
                     },
                     value: '',
                     validation: {
@@ -72,7 +72,7 @@ class Contact extends Component {
                     elementType: 'input',
                     elementConfig: {
                         type: 'text',
-                        placeholder: 'Kod pocztowy'
+                        desc: 'Kod pocztowy'
                     },
                     value: '',
                     validation: {
@@ -154,8 +154,9 @@ class Contact extends Component {
                 config: this.state.contactForm[key]
             });
         }
-        const input = formElementsArray.map(formElement =>
-          <div className="form-group" key={formElement.id+'ell'}>
+
+        const input = <form action="" className={'contact__form'}>
+            {formElementsArray.map(formElement => (
                 <Input
                     key={formElement.id}
                     elementType={formElement.config.elementType}
@@ -164,17 +165,16 @@ class Contact extends Component {
                     invalid={!formElement.config.valid}
                     shouldValidate={formElement.config.validation}
                     touched={formElement.config.touched}
+                    errorMessage={this.state.errorMessage}
+                    label={formElement.config.elementConfig.desc}
                     changed={(event) => this.inputChangedHandler(event, formElement.id)} />
+                ))}
+                <Button >WYŚLIJ</Button>
+            </form>
 
-                {/*<Label key={formElement.id+'label'}*/}
-                       {/*classLabel={(formElement.config.valid) ? 'contact__form__input_label contact__form__input_label_focused' : 'contact__form__input_label '}*/}
-                       {/*// click={(event)=> this.onLabelInputClickHandler(event, formElement.id)}*/}
-                {/*>*/}
-                    {/*{formElement.config.placeholder}*/}
-                {/*</Label>*/}
                 {/*{ ((! input.valid) && (input.isValid)) ?  <span className={'error-message'}> {this.state.errorMessage}</span> : '' }*/}
-            </div>
-        );
+
+
         //     checbkox = this.state.checkboxs.map((checkbox,index) =>
         //         <div className={( (checkbox.value === 0) && (checkbox.isValid) ) ? 'form-check error-form-check' : 'form-check'} key={index+'form-check'}>
         //             <Label key={index+'label'} forLabel={checkbox.name} classLabel={'form-check-label contact__form__checkbox_label'}>{checkbox.label}</Label>
@@ -204,13 +204,12 @@ class Contact extends Component {
                         Poznaj szczegóły oferty dla Ciebie <br />Już nawet w 10 minut !
                     </ContactTitle>
 
-                    <form action="#" className="contact__form" onSubmit={(event)=> this.checkValidate(event)}>
                         {input}
                         <div className="contact__form__check_wrapper">
                             {/*{checbkox}*/}
                         </div>
-                        <Button >WYŚLIJ</Button>
-                    </form>
+
+
 
                 </section>
             </div>

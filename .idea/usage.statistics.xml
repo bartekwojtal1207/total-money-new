@@ -40,26 +40,30 @@
     <session id="-1946344184">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="css" value="2" />
           <entry key="js" value="2" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CSS" value="2" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="478" />
+          <entry key="css" value="29" />
+          <entry key="js" value="886" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="CSS" value="29" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="478" />
+          <entry key="JavaScript" value="886" />
         </counts>
       </usages-collector>
     </session>

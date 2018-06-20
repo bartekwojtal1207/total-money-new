@@ -116,12 +116,13 @@ body .container {
 }
 
 .contact .contact__form .contact__form__input:focus + .contact__form__input_label {
-  top: -59px;
-  font-size: 14px; }
+  position: relative;
+  top: -52px;
+  font-size: 12px; }
 .contact__form__input_label_focused {
-  top: -57px !important;
-  font-size: 14px;
-  color: red;
+  position: relative;
+  top: -52px;
+  font-size: 12px;
 }
 
 .contact .contact__form .contact__form__input_label {
