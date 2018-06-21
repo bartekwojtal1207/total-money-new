@@ -14,7 +14,7 @@ class Contact extends Component {
             subtitle: 'Wypełnij, formularz, a Doradca z wybranego przez Ciebie banku skontaktuje się z Tobą i dopasuje oferte do Twoich potrzeb.',
 
             formIsValid : false,
-            errorMessage : 'pole jest wymagane',
+            errorMessage : 'Pole jest wymagane.',
 
             contactForm: {
                 name: {
@@ -76,8 +76,11 @@ class Contact extends Component {
                     elementConfig: {
                         type: 'checkbox',
                         desc: 'Wyrażam zgodę na przetwarzanie'
+                        // fullDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor fringilla augue porta maximus. Duis faucibus tortor lectus, a ornare tellus facilisis vel'
                     },
                     checked: false,
+                    fullConsent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor fringilla augue porta maximus. Duis faucibus tortor lectus, a ornare tellus facilisis vel',
+                    fullConsentVisible: false,
                     validation: {
                         required: true
                     },
@@ -90,6 +93,8 @@ class Contact extends Component {
                         type: 'checkbox',
                         desc: 'Wyrażam zgodę na otrzymywanie'
                     },
+                    fullConsent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor fringilla augue porta maximus. Duis faucibus tortor lectus, a ornare tellus facilisis vel',
+                    fullConsentVisible: false,
                     checked: false,
                     validation: {
                         required: true
@@ -102,8 +107,11 @@ class Contact extends Component {
                     elementConfig: {
                         type: 'checkbox',
                         desc: 'Wyrażam zgodę na używanie urządzeń końcowych i automatycznych systemów'
+                        // fullDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor fringilla augue porta maximus. Duis faucibus tortor lectus, a ornare tellus facilisis vel'
                     },
                     checked: false,
+                    fullConsent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor fringilla augue porta maximus. Duis faucibus tortor lectus, a ornare tellus facilisis vel',
+                    fullConsentVisible: false,
                     validation: {
                         required: true
                     },
@@ -152,19 +160,20 @@ class Contact extends Component {
         this.setState({contactForm: contactFormToUpdate, formIsValid: formIsValid});
     };
 
-    showAgreements(event, index) {
-        const agreements = this.state.checkboxs;
+    showMoreText(event, inputId) {
+        const contactFormToUpdate  = {
+            ...this.state.contactForm
+        }, FormElementToUpdate = {
+            ...contactFormToUpdate[inputId]
+        };
 
-        if (agreements[index].visibleText === 'block') {
-            agreements[index].visibleText = 'none';
-            agreements[index].textTitle = 'więcej';
-        }else {
-            agreements[index].visibleText = 'block';
-            agreements[index].textTitle = 'mniej';
-        }
+        ( ! FormElementToUpdate.fullConsentVisible ? FormElementToUpdate.fullConsentVisible = true : FormElementToUpdate.fullConsentVisible = false );
 
-        this.setState({ checkboxs: agreements })
+        contactFormToUpdate[inputId] = FormElementToUpdate;
+        this.setState({ contactForm: contactFormToUpdate })
     }
+
+
 
     render() {
         const formElementsArray = [];
@@ -175,7 +184,7 @@ class Contact extends Component {
             });
         }
 
-        const form = <form action="" className={'contact__form'}>
+        const form = <form action="#" className={'contact__form'}>
             {formElementsArray.map(formElement => (
                 <Input
                     key={formElement.id}
@@ -187,52 +196,32 @@ class Contact extends Component {
                     invalid={!formElement.config.valid}
                     shouldValidate={formElement.config.validation}
                     touched={formElement.config.touched}
+                    fullConsent={formElement.config.fullConsent}
+                    fullConsentVisible={formElement.config.fullConsentVisible}
                     errorMessage={this.state.errorMessage}
+                    showMoreText={(event)=>this.showMoreText(event, formElement.id)}
                     changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
                 <Button >WYŚLIJ</Button>
-            </form>
+            </form>;
 
-                {/*{ ((! input.valid) && (input.isValid)) ?  <span className={'error-message'}> {this.state.errorMessage}</span> : '' }*/}
-
-
-        //     checbkox = this.state.checkboxs.map((checkbox,index) =>
-        //         <div className={( (checkbox.value === 0) && (checkbox.isValid) ) ? 'form-check error-form-check' : 'form-check'} key={index+'form-check'}>
-        //             <Label key={index+'label'} forLabel={checkbox.name} classLabel={'form-check-label contact__form__checkbox_label'}>{checkbox.label}</Label>
         //                 <span className={'link-more'} onClick={(event)=> this.showAgreements(event, index)}> [ {checkbox.textTitle} ] </span>
         //                 <span key={index + 'agreements'} className={ checkbox.visibleText === 'none' ? 'text-more-hidden' : 'text-more'}>
         //                     {checkbox.text}
         //                 </span>
-        //             <Input
-        //                 key={index}
-        //                 name={checkbox.name}
-        //                 type={checkbox.type}
-        //                 id={checkbox.name}
-        //                 change={(event)=> this.onChangeCheckboxHandler(event, index)}
-        //                 classInput='form-check-input' >
-        //             </Input>
-        //
-        //             <span className={( (checkbox.value === 0) && (checkbox.isValid) ) ? 'checkbox-error' : 'contact__form__check_wrapper__fake_checkbox'} key={index+'span'}> </span>
-        //         </div>
-        // );
-        // if ( (! input.valid) && (input.isValid) ) {
-        //     test.push('danger')
-        // }
+
         return(
             <div>
                 <section className="col-md-12 contact">
                     <ContactTitle subtitle={this.state.subtitle}>
                         Poznaj szczegóły oferty dla Ciebie <br />Już nawet w 10 minut !
                     </ContactTitle>
-
                         {form}
-                        <div className="contact__form__check_wrapper">
-                            {/*{checbkox}*/}
-                        </div>
                 </section>
             </div>
         )
     }
 }
+
 
 export default Contact;

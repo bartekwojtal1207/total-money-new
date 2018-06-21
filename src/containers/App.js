@@ -14,12 +14,12 @@ class App extends Component {
       <div className="App">
           <div className="container">
               <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-xs-12">
                     <Header/>
                       <CreditInfo/>
                       <SecurityInfo/>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-xs-12">
                         <Contact/>
                   </div>
               </div>
