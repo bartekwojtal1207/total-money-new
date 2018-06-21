@@ -6,7 +6,7 @@ import CreditInfo from '../components/CreditInfo/CreditInfo';
 import SecurityInfo from '../components/SecurityInfo/SecurityInfo';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer'
-
+{console.log(window.innerWidth)}
 
 class App extends Component {
   render() {
@@ -14,13 +14,15 @@ class App extends Component {
       <div className="App">
           <div className="container">
               <div className="row">
-                  <div className="col-md-6 col-xs-12">
+                  <div className="col-md-6">
                     <Header/>
+                      {window.innerWidth < 500 ? <Contact/> : ''}
                       <CreditInfo/>
                       <SecurityInfo/>
                   </div>
                   <div className="col-md-6 col-xs-12">
-                        <Contact/>
+                      {window.innerWidth > 500 ? <Contact/> : ''}
+
                   </div>
               </div>
           </div>
