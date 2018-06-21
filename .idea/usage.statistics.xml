@@ -43,6 +43,7 @@
           <entry key="css" value="2" />
           <entry key="js" value="3" />
           <entry key="json" value="1" />
+          <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -50,12 +51,13 @@
           <entry key="CSS" value="2" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="3" />
+          <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="59" />
-          <entry key="js" value="1604" />
+          <entry key="js" value="2139" />
           <entry key="json" value="1" />
           <entry key="txt" value="8" />
         </counts>
@@ -64,7 +66,7 @@
         <counts>
           <entry key="CSS" value="59" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="1604" />
+          <entry key="JavaScript" value="2139" />
           <entry key="PLAIN_TEXT" value="8" />
         </counts>
       </usages-collector>

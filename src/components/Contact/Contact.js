@@ -12,17 +12,7 @@ class Contact extends Component {
 
         this.state = {
             subtitle: 'Wypełnij, formularz, a Doradca z wybranego przez Ciebie banku skontaktuje się z Tobą i dopasuje oferte do Twoich potrzeb.',
-            inputs: [
-                {name: 'name', type: 'text', label: 'Imię', valid: false, isValid: false},
-                {name: 'surname', type: 'text', label: 'Nazwisko', valid: false, isValid: false},
-                {name: 'phone', type: 'text', label: 'Telefon', valid: false, isValid: false},
-                {name: 'postCode', type: 'text', label: 'Kod pocztowy', valid: false, isValid: false},
-            ],
-            checkboxs: [
-                {name: 'agreementConsent', type: 'checkbox', value: 0, isValid: false, label: 'Wyrażam zgodę na przetwarzanie',textTitle: 'więcej', text: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae suscipit turpis, eu molestie arcu. Nullam vitae dui nec sem mattis auctor id vel tortor.', visibleText: 'none' },
-                {name: 'ofertsConsent', type: 'checkbox', value: 0, isValid: false, label: 'Wyrażam zgodę na otrzymywanie ',textTitle: 'więcej', text: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae suscipit turpis, eu molestie arcu. Nullam vitae dui nec sem mattis auctor id vel tortor.', visibleText: 'none'},
-                {name: 'contactConsent', type: 'checkbox', value: 0, isValid: false, label: 'Wyrażam zgodę na przetwarzanieWyrażam urządzeń końcowych i automatycznych systemów',textTitle: 'więcej', text: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae suscipit turpis, eu molestie arcu. Nullam vitae dui nec sem mattis auctor id vel tortor.', visibleText: 'none'},
-            ],
+
             formIsValid : false,
             errorMessage : 'pole jest wymagane',
 
@@ -81,13 +71,39 @@ class Contact extends Component {
                     valid: false,
                     touched: false
                 },
-                agreements: {
+                agreementConsent: {
                     elementType: 'checkbox',
                     elementConfig: {
                         type: 'checkbox',
                         desc: 'Wyrażam zgodę na przetwarzanie'
                     },
-                    value: '',
+                    checked: false,
+                    validation: {
+                        required: true
+                    },
+                    valid: false,
+                    touched: false
+                },
+                offertsConsent: {
+                    elementType: 'checkbox',
+                    elementConfig: {
+                        type: 'checkbox',
+                        desc: 'Wyrażam zgodę na otrzymywanie'
+                    },
+                    checked: false,
+                    validation: {
+                        required: true
+                    },
+                    valid: false,
+                    touched: false
+                },
+                systemConsent: {
+                    elementType: 'checkbox',
+                    elementConfig: {
+                        type: 'checkbox',
+                        desc: 'Wyrażam zgodę na używanie urządzeń końcowych i automatycznych systemów'
+                    },
+                    checked: false,
                     validation: {
                         required: true
                     },
@@ -97,6 +113,7 @@ class Contact extends Component {
             }
         }
     }
+
     checkValidity(value, rules) {
         let isValid = true;
 
@@ -112,6 +129,7 @@ class Contact extends Component {
     }
 
     inputChangedHandler = (event, inputId) => {
+
         const contactFormToUpdate  = {
             ...this.state.contactForm
         }, FormElementToUpdate = {
@@ -119,6 +137,8 @@ class Contact extends Component {
         };
 
         FormElementToUpdate.value = event.target.value;
+        FormElementToUpdate.checked = event.target.checked;
+
         FormElementToUpdate.valid = this.checkValidity(FormElementToUpdate.value, FormElementToUpdate.validation);
         FormElementToUpdate.touched = true;
         contactFormToUpdate[inputId] = FormElementToUpdate;
@@ -131,19 +151,6 @@ class Contact extends Component {
 
         this.setState({contactForm: contactFormToUpdate, formIsValid: formIsValid});
     };
-
-    onChangeCheckboxHandler = (event, index) => {
-        const checkbox = this.state.checkboxs;
-
-        checkbox[index].isValid = true;
-        checkbox[index].value === 0 ? checkbox[index].value = 1 : checkbox[index].value = 0;
-
-        this.setState({ checkboxs: checkbox})
-    };
-
-    onLabelInputClickHandler = (event, index) => {
-        // this.onChangeInputValueHandler(event, index)
-    }
 
     showAgreements(event, index) {
         const agreements = this.state.checkboxs;
@@ -172,9 +179,11 @@ class Contact extends Component {
             {formElementsArray.map(formElement => (
                 <Input
                     key={formElement.id}
+                    id={formElement.id}
                     elementType={formElement.config.elementType}
                     elementConfig={formElement.config.elementConfig}
                     value={formElement.config.value}
+                    checked={formElement.config.checked}
                     invalid={!formElement.config.valid}
                     shouldValidate={formElement.config.validation}
                     touched={formElement.config.touched}

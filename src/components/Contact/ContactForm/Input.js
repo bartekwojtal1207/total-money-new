@@ -24,16 +24,24 @@ const Input = (props) => {
                 value={props.value}
                 onChange={props.changed}/>;
             break;
+
         case ('checkbox'):
-            inputElement = <div className={'form-check'}>
-                    <input
-                        className={'form-check-input'}
-                        {...props.elementConfig}
-                        value={props.value}
-                        onChange={props.changed} />
-                    <span className={'contact__form__check_wrapper__fake_checkbox'}></span>
+            inputElement =
+                <div className={'form-check'}>
+                    <label className="form-check-label contact__form__checkbox_label" htmlFor={props.id}>{props.elementConfig.desc}</label>
+                    <span>[ więcej ]</span>
+                        <input
+                            className={'form-check-input'}
+                            {...props.elementConfig}
+                            checked={props.checked}
+                            id={props.id}
+                            onChange={props.changed}
+                        />
+                        <span className={'contact__form__check_wrapper__fake_checkbox'}></span>
+                    {! props.checked &&  props.touched ?  <span className={'error-message'}> {props.errorMessage}</span> : ''}
                 </div>;
-             break;
+            break;
+
         default:
             inputElement = <input
                 className={inputClasses.join(' ')}
@@ -42,31 +50,24 @@ const Input = (props) => {
                 onChange={props.changed} />;
     }
 
+
+    let  labelElement = null;
+
+    if (props.elementType === 'input' ) {
+        labelElement =  <Label label={props.elementConfig.desc}
+                               elementType={props.elementType}
+                               className={props.elementType === 'input' ? labelClasses.join('') : labelCheckboxClasses }>
+                        </Label>
+    }
+
     return (
         <div className={props.elementType === 'input' ? 'form-group' : 'contact__form__check_wrapper'}>
             {inputElement}
-            <Label label={props.elementConfig.desc}
-                   elementType={props.elementType}
-                   className={props.elementType === 'input' ? labelClasses.join('') : labelCheckboxClasses }>
-            </Label>
-            {props.invalid && props.shouldValidate && props.touched ?  <span className={'error-message'}> {props.errorMessage}</span> : ''}
+            {labelElement}
+            {props.elementType === 'input' && props.invalid && props.shouldValidate && props.touched ?  <span className={'error-message'}> {props.errorMessage}</span> : ''}
         </div>
     )
 
 };
 
 export default Input;
-
-{/*<div className={( (checkbox.value === 0) && (checkbox.isValid) ) ? 'form-check error-form-check' : 'form-check'} key={index+'form-check'}>*/}
-
-    //             <Input
-//                 key={index}
-//                 name={checkbox.name}
-//                 type={checkbox.type}
-//                 id={checkbox.name}
-//                 change={(event)=> this.onChangeCheckboxHandler(event, index)}
-//                 classInput='form-check-input' >
-//             </Input>
-//
-//             <span className={( (checkbox.value === 0) && (checkbox.isValid) ) ? 'checkbox-error' : 'contact__form__check_wrapper__fake_checkbox'} key={index+'span'}> </span>
-//         </div>
