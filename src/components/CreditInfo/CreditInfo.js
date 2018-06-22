@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import pkoLogo from '../../assets/img/pko-bp.png'
+import pkoLogo from '../../assets/img/pko-bp.png';
+import './CreditInfo.css';
 import CreditInfoItems from './CreditInfoItems/CreditInfoItems';
 
 class CreditInfo extends Component {
@@ -28,7 +29,7 @@ class CreditInfo extends Component {
         
         return (
             <div>
-                <section className="credit">
+                <section className="credit row">
                     <div className="col-md-12 credit__company">
                         <img src={pkoLogo} className="img img-fluid credit__logo" alt="logo bank"/>
                             <h4 className="text-left credit__title">Kredyt mieszkaniowy Własny Kąt</h4>

@@ -1,0 +1,28 @@
+.credit .credit__company { padding-left: 0; }
+
+.credit .credit__company .credit__logo { height: 50px; }
+
+.credit .credit__company .credit__title {
+    margin: 7px 0 0 0 ;
+    line-height: 28px; }
+
+.credit .credit__company .credit__bank_name { color: rgba(0, 0, 0, 0.3); }
+
+.credit .credit__company .credit__raiting {
+    background-image: url("../../assets/img/star-icon.svg");
+    width: 77px;
+    height: 15px;
+    display: block; }
+
+.credit .credit__info {
+    padding-left: 0;
+    margin: 10px 0 9px 0; }
+
+.credit .credit__info .credit__info__list {
+    font-size: 14px;
+    padding-left: 0;
+    list-style: none; }
+
+.credit .credit__hr {
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); }

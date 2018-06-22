@@ -1,7 +1,7 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 24px; }
-body .container {
+.container {
   max-width: 905px; }
 
 /*first section*/
@@ -9,76 +9,76 @@ body .container {
   background-color: orange !important;
 }
 
-.header .header__title {
-  margin-top: 30px;
-  margin-bottom: 50px;
-  font-size: 30px;
-  line-height: 24px; }
-.header .header__title .header__title__link {
-  font-weight: 300;
-  color: #212529; }
-.header .header__title .header__title__link:hover {
-  text-decoration: none; }
+/*.header .header__title {*/
+  /*margin-top: 30px;*/
+  /*margin-bottom: 50px;*/
+  /*font-size: 30px;*/
+  /*line-height: 24px; }*/
+/*.header .header__title .header__title__link {*/
+  /*font-weight: 300;*/
+  /*color: #212529; }*/
+/*.header .header__title .header__title__link:hover {*/
+  /*text-decoration: none; }*/
 
-.header .header__hr {
-  width: 100%;
-  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+/*.header .header__hr {*/
+  /*width: 100%;*/
+  /*border-top: 1px solid rgba(0, 0, 0, 0.1); }*/
 
 /* two section*/
 
-.credit .credit__company {
-  padding-left: 0; }
-.credit .credit__company .credit__logo {
-  width: 145px;
-  height: 50px; }
-.credit .credit__company .credit__title {
-  margin: 0;
-  margin-top: 7px;
-  font-size: 24px;
-  line-height: 28px; }
-.credit .credit__company .credit__bank_name {
-  color: rgba(0, 0, 0, 0.3);
-  width: 100%;
-  line-height: 24px; }
-.credit .credit__company .credit__raiting {
-  background-image: url("../assets/img/star-icon.svg");
-  width: 77px;
-  height: 15px;
-  display: block; }
+/*.credit .credit__company {*/
+  /*padding-left: 0; }*/
+/*.credit .credit__company .credit__logo {*/
+  /*width: 145px;*/
+  /*height: 50px; }*/
+/*.credit .credit__company .credit__title {*/
+  /*margin: 0;*/
+  /*margin-top: 7px;*/
+  /*font-size: 24px;*/
+  /*line-height: 28px; }*/
+/*.credit .credit__company .credit__bank_name {*/
+  /*color: rgba(0, 0, 0, 0.3);*/
+  /*width: 100%;*/
+  /*line-height: 24px; }*/
+/*.credit .credit__company .credit__raiting {*/
+  /*background-image: url("../assets/img/star-icon.svg");*/
+  /*width: 77px;*/
+  /*height: 15px;*/
+  /*display: block; }*/
 
-.credit .credit__info {
-  padding-left: 0;
-  margin-top: 10px; }
-.credit .credit__info .credit__info__list {
-  margin-bottom: 0;
-  font-size: 14px;
-  color: #333;
-  padding-left: 0;
-  list-style: none; }
+/*.credit .credit__info {*/
+  /*padding-left: 0;*/
+  /*margin-top: 10px; }*/
+/*.credit .credit__info .credit__info__list {*/
+  /*margin-bottom: 0;*/
+  /*font-size: 14px;*/
+  /*color: #333;*/
+  /*padding-left: 0;*/
+  /*list-style: none; }*/
 
-.credit .credit__hr {
-  width: 100%;
-  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+/*.credit .credit__hr {*/
+  /*width: 100%;*/
+  /*border-top: 1px solid rgba(0, 0, 0, 0.1); }*/
 
 /*three section */
-.security .security__container {
-  padding-left: 0;
-  padding-top: 43px; }
-.security .security__list {
-  padding-left: 0; }
-.security .security__list .security__list_item {
-  list-style: none;
-  margin-bottom: 10px;
-  font-size: 14px;
-  font-weight: 400; }
-.security .security__list .security__list_item .security_item__logo {
-  width: 3.5%;
-  display: inline-block;
-  margin-right: 4px; }
-.security .security__list .security__list_item .security_item__title {
-  margin-bottom: 0;
-  display: inline-block;
-  color: #a9a9a9; }
+/*.security .security__container {*/
+  /*padding-left: 0;*/
+  /*padding-top: 43px; }*/
+/*.security .security__list {*/
+  /*padding-left: 0; }*/
+/*.security .security__list .security__list_item {*/
+  /*list-style: none;*/
+  /*margin-bottom: 10px;*/
+  /*font-size: 14px;*/
+  /*font-weight: 400; }*/
+/*.security .security__list .security__list_item .security_item__logo {*/
+  /*width: 3.5%;*/
+  /*display: inline-block;*/
+  /*margin-right: 4px; }*/
+/*.security .security__list .security__list_item .security_item__title {*/
+  /*margin-bottom: 0;*/
+  /*display: inline-block;*/
+  /*color: #a9a9a9; }*/
 /*four section !*/
 .contact .contact__form_wraper {
   padding-bottom: 20px; }

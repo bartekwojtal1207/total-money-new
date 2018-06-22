@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SecurityInfo.css';
 import lock from '../../assets/img/lock.svg';
 import cert from '../../assets/img/cert.svg';
 import key from '../../assets/img/key.svg';

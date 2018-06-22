@@ -1,0 +1,17 @@
+.security .security__container { padding: 43px 0 0 0; }
+
+.security .security__list { padding-left: 0; }
+
+.security .security__list .security__list_item {
+    list-style: none;
+    margin-bottom: 10px;
+    font-size: 14px; }
+
+.security .security__list .security__list_item .security_item__logo {
+    width: 3.5%;
+    margin-right: 4px; }
+
+.security .security__list .security__list_item .security_item__title {
+    margin-bottom: 0;
+    display: inline-block;
+    color: #a9a9a9; }

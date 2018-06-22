@@ -6,12 +6,12 @@ import CreditInfo from '../components/CreditInfo/CreditInfo';
 import SecurityInfo from '../components/SecurityInfo/SecurityInfo';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer'
-{console.log(classes)}
+{console.log(window.innerWidth)}
 
 class App extends Component {
   render() {
     return (
-      <div className={classes.test}>
+      <div className="App">
           <div className="container">
               <div className="row">
                   <div className="col-md-6">
