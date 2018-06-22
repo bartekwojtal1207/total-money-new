@@ -22,14 +22,16 @@ const Input = (props) => {
                 className={inputClasses.join(' ')}
                 {...props.elementConfig}
                 value={props.value}
+                onFocus={props.onFocus}
                 onChange={props.changed}/>;
+
             break;
 
         case ('checkbox'):
             inputElement =
                 <div className={! props.checked &&  props.touched ? 'form-check error-form-check': 'form-check'}>
                     <label className="form-check-label contact__form__checkbox_label" htmlFor={props.id}>{props.elementConfig.desc}</label>
-                    <span onClick={props.showMoreText}> [ więcej ] </span>
+                    <span onClick={props.showMoreText}> {! props.fullConsentVisible ? '[ więcej ]' : '[ mniej ]' }</span>
                     <span className={props.fullConsentVisible ? 'text-more' :  'text-more-hidden'}>
                         {props.fullConsent}
                     </span>
@@ -41,7 +43,6 @@ const Input = (props) => {
                             onChange={props.changed}
                         />
                         <span className={! props.checked &&  props.touched ? 'contact__form__check_wrapper__fake_checkbox checkbox-error' : 'contact__form__check_wrapper__fake_checkbox'}></span>
-                    {! props.checked &&  props.touched ?  <span className={'error-message'}> {props.errorMessage}</span> : ''}
                 </div>;
             break;
 
@@ -66,7 +67,7 @@ const Input = (props) => {
     return (
         <div className={props.elementType === 'input' ? 'form-group' : 'check'}>
             { props.elementType === 'input' && props.invalid && props.shouldValidate && props.touched ?  <i className="demo-icon icon-exclamation"></i> : '' }
-            { props.elementType === 'checkbox' && ! props.checked &&  props.touched ?  <i className="demo-icon icon-exclamation"></i> : '' }
+            { props.elementType === 'input' && !props.invalid && props.shouldValidate && props.touched ?  <i className="demo-icon icon-ok"></i> : '' }
             {inputElement}
             {labelElement}
             {props.elementType === 'input' && props.invalid && props.shouldValidate && props.touched ?  <span className={'error-message'}> {props.errorMessage}</span> : ''}

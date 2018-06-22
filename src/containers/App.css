@@ -5,6 +5,9 @@ body .container {
   max-width: 905px; }
 
 /*first section*/
+.test {
+  background-color: orange !important;
+}
 
 .header .header__title {
   margin-top: 30px;
@@ -279,10 +282,11 @@ body .container {
   padding: 5px 0;
   border-radius: 6px;
   left: -126px;
+  line-height: 18px;
   position: absolute;
   z-index: 1;
   font-size: 12px;
-  height: 100px;
+  height: 85px;
   font-family: 'Source Sans Pro', sans-serif;
   top: -35px;
 }
@@ -324,6 +328,9 @@ body .container {
   position: absolute;
   left: 385px;
 }
-.icon-exclamation.success {
+.icon-ok{
+  position: absolute;
   color: green;
+  float: right;
+  left: 385px;
 }

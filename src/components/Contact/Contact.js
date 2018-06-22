@@ -85,7 +85,6 @@ class Contact extends Component {
                         required: true
                     },
                     valid: false,
-                    touched: false
                 },
                 offertsConsent: {
                     elementType: 'checkbox',
@@ -100,7 +99,6 @@ class Contact extends Component {
                         required: true
                     },
                     valid: false,
-                    touched: false
                 },
                 systemConsent: {
                     elementType: 'checkbox',
@@ -116,7 +114,6 @@ class Contact extends Component {
                         required: true
                     },
                     valid: false,
-                    touched: false
                 }
             }
         }
@@ -160,6 +157,19 @@ class Contact extends Component {
         this.setState({contactForm: contactFormToUpdate, formIsValid: formIsValid});
     };
 
+    onFocusInputHandler(props, inputId) {
+        const contactFormToUpdate  = {
+            ...this.state.contactForm
+        }, FormElementToUpdate = {
+            ...contactFormToUpdate[inputId]
+        };
+
+        FormElementToUpdate.touched = true;
+
+        contactFormToUpdate[inputId] = FormElementToUpdate;
+        this.setState({ contactForm: contactFormToUpdate })
+    }
+
     showMoreText(event, inputId) {
         const contactFormToUpdate  = {
             ...this.state.contactForm
@@ -167,7 +177,7 @@ class Contact extends Component {
             ...contactFormToUpdate[inputId]
         };
 
-        ( ! FormElementToUpdate.fullConsentVisible ? FormElementToUpdate.fullConsentVisible = true : FormElementToUpdate.fullConsentVisible = false );
+        (! FormElementToUpdate.fullConsentVisible ? FormElementToUpdate.fullConsentVisible = true : FormElementToUpdate.fullConsentVisible = false );
 
         contactFormToUpdate[inputId] = FormElementToUpdate;
         this.setState({ contactForm: contactFormToUpdate })
@@ -199,16 +209,12 @@ class Contact extends Component {
                     fullConsent={formElement.config.fullConsent}
                     fullConsentVisible={formElement.config.fullConsentVisible}
                     errorMessage={this.state.errorMessage}
+                    onFocus={(event)=>this.onFocusInputHandler(event, formElement.id)}
                     showMoreText={(event)=>this.showMoreText(event, formElement.id)}
                     changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
                 <Button >WYŚLIJ</Button>
             </form>;
-
-        //                 <span className={'link-more'} onClick={(event)=> this.showAgreements(event, index)}> [ {checkbox.textTitle} ] </span>
-        //                 <span key={index + 'agreements'} className={ checkbox.visibleText === 'none' ? 'text-more-hidden' : 'text-more'}>
-        //                     {checkbox.text}
-        //                 </span>
 
         return(
             <div>
