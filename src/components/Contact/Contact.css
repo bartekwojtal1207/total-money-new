@@ -35,6 +35,7 @@
     font-size: 12px !important; }
 
 .contact__form__input_label_focused {
+    position: relative;
     top: -60px;
     font-size: 12px;
 }

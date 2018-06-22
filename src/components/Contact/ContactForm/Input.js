@@ -24,7 +24,6 @@ const Input = (props) => {
                 value={props.value}
                 onFocus={props.onFocus}
                 onChange={props.changed}/>;
-
             break;
 
         case ('checkbox'):
@@ -54,7 +53,6 @@ const Input = (props) => {
                 onChange={props.changed} />;
     }
 
-
     let  labelElement = null;
 
     if (props.elementType === 'input' ) {
@@ -73,7 +71,7 @@ const Input = (props) => {
             {props.elementType === 'input' && props.invalid && props.shouldValidate && props.touched ?  <span className={'error-message'}> {props.errorMessage}</span> : ''}
         </div>
     )
-
 };
+
 
 export default Input;

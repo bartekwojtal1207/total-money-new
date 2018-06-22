@@ -16,13 +16,12 @@ class App extends Component {
               <div className="row">
                   <div className="col-md-6">
                     <Header/>
-                      {window.innerWidth < 500 ? <Contact/> : ''}
+                      {window.innerWidth <= 767 ? <Contact/> : ''}
                       <CreditInfo/>
                       <SecurityInfo/>
                   </div>
                   <div className="col-md-6 col-xs-12">
-                      {window.innerWidth > 500 ? <Contact/> : ''}
-
+                      {window.innerWidth > 767 ? <Contact/> : ''}
                   </div>
               </div>
           </div>

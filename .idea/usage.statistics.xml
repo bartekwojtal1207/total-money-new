@@ -42,11 +42,11 @@
         <counts>
           <entry key="css" value="13" />
           <entry key="html" value="1" />
-          <entry key="js" value="17" />
+          <entry key="js" value="19" />
           <entry key="json" value="5" />
           <entry key="png" value="1" />
           <entry key="rnc" value="1" />
-          <entry key="svg" value="8" />
+          <entry key="svg" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -55,16 +55,16 @@
           <entry key="HTML" value="1" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="17" />
+          <entry key="JavaScript" value="19" />
           <entry key="RNG Compact" value="1" />
-          <entry key="SVG" value="8" />
+          <entry key="SVG" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="818" />
+          <entry key="css" value="827" />
           <entry key="html" value="21" />
-          <entry key="js" value="3731" />
+          <entry key="js" value="4004" />
           <entry key="json" value="1" />
           <entry key="svg" value="2" />
           <entry key="txt" value="50" />
@@ -72,10 +72,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="818" />
+          <entry key="CSS" value="827" />
           <entry key="HTML" value="21" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="3731" />
+          <entry key="JavaScript" value="4004" />
           <entry key="PLAIN_TEXT" value="50" />
           <entry key="SVG" value="2" />
         </counts>

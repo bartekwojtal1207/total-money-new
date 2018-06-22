@@ -12,10 +12,7 @@ class Contact extends Component {
 
         this.state = {
             subtitle: 'Wypełnij, formularz, a Doradca z wybranego przez Ciebie banku skontaktuje się z Tobą i dopasuje oferte do Twoich potrzeb.',
-
             formIsValid : false,
-            errorMessage : 'Pole jest wymagane.',
-
             contactForm: {
                 name: {
                     elementType: 'input',
@@ -76,7 +73,6 @@ class Contact extends Component {
                     elementConfig: {
                         type: 'checkbox',
                         desc: 'Wyrażam zgodę na przetwarzanie'
-                        // fullDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor fringilla augue porta maximus. Duis faucibus tortor lectus, a ornare tellus facilisis vel'
                     },
                     checked: false,
                     fullConsent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor fringilla augue porta maximus. Duis faucibus tortor lectus, a ornare tellus facilisis vel',
@@ -105,7 +101,6 @@ class Contact extends Component {
                     elementConfig: {
                         type: 'checkbox',
                         desc: 'Wyrażam zgodę na używanie urządzeń końcowych i automatycznych systemów'
-                        // fullDesc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor fringilla augue porta maximus. Duis faucibus tortor lectus, a ornare tellus facilisis vel'
                     },
                     checked: false,
                     fullConsent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor fringilla augue porta maximus. Duis faucibus tortor lectus, a ornare tellus facilisis vel',
@@ -115,11 +110,13 @@ class Contact extends Component {
                     },
                     valid: false,
                 }
-            }
+            },
+            errorMessage : 'Pole jest wymagane.'
         }
     }
 
-    checkValidity(value, rules) {
+    checkValidity = (element, value, rules) => {
+
         let isValid = true;
 
         if (!rules) {
@@ -130,8 +127,12 @@ class Contact extends Component {
             isValid = value.trim() !== '' && isValid;
         }
 
+        if ((element.elementType === 'checkbox') && (!element.checked)) {
+                isValid = false;
+        }
+
         return isValid;
-    }
+    };
 
     inputChangedHandler = (event, inputId) => {
 
@@ -144,7 +145,7 @@ class Contact extends Component {
         FormElementToUpdate.value = event.target.value;
         FormElementToUpdate.checked = event.target.checked;
 
-        FormElementToUpdate.valid = this.checkValidity(FormElementToUpdate.value, FormElementToUpdate.validation);
+        FormElementToUpdate.valid = this.checkValidity(FormElementToUpdate ,FormElementToUpdate.value, FormElementToUpdate.validation);
         FormElementToUpdate.touched = true;
         contactFormToUpdate[inputId] = FormElementToUpdate;
 
@@ -157,7 +158,7 @@ class Contact extends Component {
         this.setState({contactForm: contactFormToUpdate, formIsValid: formIsValid});
     };
 
-    onFocusInputHandler(props, inputId) {
+    onFocusInputHandler = (props, inputId) => {
         const contactFormToUpdate  = {
             ...this.state.contactForm
         }, FormElementToUpdate = {
@@ -168,9 +169,9 @@ class Contact extends Component {
 
         contactFormToUpdate[inputId] = FormElementToUpdate;
         this.setState({ contactForm: contactFormToUpdate })
-    }
+    };
 
-    showMoreText(event, inputId) {
+    showMoreText = (event, inputId) => {
         const contactFormToUpdate  = {
             ...this.state.contactForm
         }, FormElementToUpdate = {
@@ -181,9 +182,7 @@ class Contact extends Component {
 
         contactFormToUpdate[inputId] = FormElementToUpdate;
         this.setState({ contactForm: contactFormToUpdate })
-    }
-
-
+    };
 
     render() {
         const formElementsArray = [];
@@ -220,7 +219,8 @@ class Contact extends Component {
             <div>
                 <section className="col-md-12 contact">
                     <ContactTitle subtitle={this.state.subtitle}>
-                        Poznaj szczegóły oferty dla Ciebie <br />Już nawet w 10 minut !
+                        Poznaj szczegóły oferty dla Ciebie <br />
+                        Już nawet w 10 minut !
                     </ContactTitle>
                         {form}
                 </section>
