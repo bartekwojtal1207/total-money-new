@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Tooltip from '../ContactTooltip/ContactTooltip'
+import './ContactTitle.css';
+import Tooltip from '../ContactTooltip/ContactTooltip';
 
 const ContactTitle = (props) => {
     return (

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './ContactTooltip.css';
 
 const Tooltip = (props) => {
     return (

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import './Contact.css';
 import ContactTitle from './ContactTitle/ContactTitle';
 import Input from './ContactForm/Input';
-import Label from './ContactForm/Label';
 import Button from './ContactForm/Button';
 
 

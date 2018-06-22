@@ -1,0 +1,27 @@
+.footer {
+    background-color: #26282b;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #a9a9a9;
+    font-size: 14px;
+    padding-top: 10px; }
+
+.footer .container { padding-left: 0; }
+
+.footer .footer__list {
+    padding-left: 0;
+    display: inline-block; }
+
+.footer .footer__list .footer__list__item {
+    display: inline-block;
+    margin-right: 7px;
+    opacity: .6; }
+
+.footer .footer__list .footer__list__item a { color: #FFF; }
+
+.footer .footer__wp_content {
+    float: right;
+    display: inline-block; }
+
+.footer .footer__wp_content .footer__wp_content__logo { margin-right: 5px; }

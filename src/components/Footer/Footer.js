@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import wpLogo from '../../assets/img/wp.png'
+import './Footer.css';
+import wpLogo from '../../assets/img/wp.png';
 
 
 
