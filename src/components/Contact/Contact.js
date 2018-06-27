@@ -114,7 +114,9 @@ class Contact extends Component {
                     valid: false,
                 }
             },
-            errorMessage : 'Pole jest wymagane.'
+            errorMessage : 'Pole jest wymagane.',
+            test: 'contact__form__input_label',
+            test2: 'contact__form__input_label_focused'
         }
     }
 
@@ -193,6 +195,10 @@ class Contact extends Component {
         if (formIsValid) { alert('wysłano formularz') }
     };
 
+    labelClick = (event) => {
+//        this.setState({test: this.state.test2})
+    }
+
 
     render() {
         const formElementsArray = [];
@@ -220,6 +226,8 @@ class Contact extends Component {
                     errorMessage={this.state.errorMessage}
                     onFocus={(event)=>this.onFocusInputHandler(event, formElement.id)}
                     showMoreText={(event)=>this.showMoreText(event, formElement.id)}
+                    // labelClick={(event)=>this.labelClick(event, formElement.id)}
+                    // labelClass={this.state.test}
                     changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
                 <Button>WYŚLIJ</Button>

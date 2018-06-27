@@ -42,7 +42,7 @@
         <counts>
           <entry key="css" value="14" />
           <entry key="html" value="1" />
-          <entry key="js" value="20" />
+          <entry key="js" value="22" />
           <entry key="json" value="5" />
           <entry key="png" value="1" />
           <entry key="rnc" value="1" />
@@ -55,7 +55,7 @@
           <entry key="HTML" value="1" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="20" />
+          <entry key="JavaScript" value="22" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="9" />
         </counts>
@@ -64,7 +64,7 @@
         <counts>
           <entry key="css" value="863" />
           <entry key="html" value="21" />
-          <entry key="js" value="5011" />
+          <entry key="js" value="5557" />
           <entry key="json" value="1" />
           <entry key="svg" value="2" />
           <entry key="txt" value="50" />
@@ -75,7 +75,7 @@
           <entry key="CSS" value="863" />
           <entry key="HTML" value="21" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="5011" />
+          <entry key="JavaScript" value="5557" />
           <entry key="PLAIN_TEXT" value="50" />
           <entry key="SVG" value="2" />
         </counts>
