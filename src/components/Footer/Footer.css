@@ -5,6 +5,7 @@
     width: 100%;
     color: #a9a9a9;
     font-size: 14px;
+    z-index: 100;
     padding-top: 10px; }
 
 .footer .container { padding-left: 0; }

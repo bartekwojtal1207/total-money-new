@@ -44,7 +44,7 @@ class Contact extends Component {
                 phone: {
                     elementType: 'input',
                     elementConfig: {
-                        type: 'phone',
+                        type: 'number',
                         desc: 'Telefon'
                     },
                     value: '',
@@ -59,12 +59,14 @@ class Contact extends Component {
                 zipCode: {
                     elementType: 'input',
                     elementConfig: {
-                        type: 'text',
+                        type: 'number',
                         desc: 'Kod pocztowy'
                     },
                     value: '',
                     validation: {
-                        required: true
+                        required: true,
+                        maxLength: 5,
+                        minLength: 5
                     },
                     valid: false,
                     touched: false

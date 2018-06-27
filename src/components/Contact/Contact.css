@@ -19,6 +19,15 @@
     box-shadow: none;
     color:  #495057; }
 
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .contact__form__input:focus { border-bottom-color: #495057 !important; }
 
 /*input type text -> label*/
