@@ -13,6 +13,7 @@ class Contact extends Component {
         this.state = {
             subtitle: 'Wypełnij, formularz, a Doradca z wybranego przez Ciebie banku skontaktuje się z Tobą i dopasuje oferte do Twoich potrzeb.',
             formIsValid : false,
+            test: false,
             contactForm: {
                 name: {
                     elementType: 'input',
@@ -184,6 +185,13 @@ class Contact extends Component {
         this.setState({ contactForm: contactFormToUpdate })
     };
 
+    handleSubmit = (event) => {
+        let formIsValid = this.state.formIsValid;
+
+        if (formIsValid) { alert('wysłano formularz') }
+    };
+
+
     render() {
         const formElementsArray = [];
         for (let key in this.state.contactForm) {
@@ -193,7 +201,7 @@ class Contact extends Component {
             });
         }
 
-        const form = <form action="#" className={'contact__form'}>
+        const form = <form action="#" className={'contact__form'} onSubmit={(event) => this.handleSubmit(event)}>
             {formElementsArray.map(formElement => (
                 <Input
                     key={formElement.id}
@@ -212,7 +220,7 @@ class Contact extends Component {
                     showMoreText={(event)=>this.showMoreText(event, formElement.id)}
                     changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
-                <Button >WYŚLIJ</Button>
+                <Button>WYŚLIJ</Button>
             </form>;
 
         return(
@@ -222,7 +230,7 @@ class Contact extends Component {
                         Poznaj szczegóły oferty dla Ciebie <br />
                         Już nawet w 10 minut !
                     </ContactTitle>
-                        {form}
+                        { form }
                 </section>
             </div>
         )

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Label from './Label'
 
 const Input = (props) => {
@@ -23,7 +23,8 @@ const Input = (props) => {
                 {...props.elementConfig}
                 value={props.value}
                 onFocus={props.onFocus}
-                onChange={props.changed}/>;
+                onChange={props.changed}
+                required={true}/>;
             break;
 
         case ('checkbox'):
@@ -40,6 +41,7 @@ const Input = (props) => {
                             checked={props.checked}
                             id={props.id}
                             onChange={props.changed}
+                            required={true}
                         />
                         <span className={! props.checked &&  props.touched ? 'contact__form__check_wrapper__fake_checkbox checkbox-error' : 'contact__form__check_wrapper__fake_checkbox'}></span>
                 </div>;
@@ -53,21 +55,30 @@ const Input = (props) => {
                 onChange={props.changed} />;
     }
 
-    let  labelElement = null;
+    let  labelElement = null,
+         iconElement = null;
 
     if (props.elementType === 'input' ) {
-        labelElement =  <Label label={props.elementConfig.desc}
-                               elementType={props.elementType}
-                               className={props.elementType === 'input' ? labelClasses.join('') : labelCheckboxClasses }>
-                        </Label>
+        labelElement =  <Label label={props.elementConfig.desc} elementType={props.elementType} className={props.elementType === 'input' ? labelClasses.join('') : labelCheckboxClasses }> </Label>;
+
+        if (props.invalid && (props.shouldValidate && props.touched)) {
+            iconElement =  <i className="demo-icon icon-exclamation"></i>;
+        }else if (!props.invalid && (props.shouldValidate && props.touched)){
+            iconElement = <i className="demo-icon icon-ok"></i>
+        }
+    }else if (props.elementType === 'checkbox') {
+        if ( props.checked &&  props.touched) {
+            iconElement = <i className="demo-icon icon-ok"></i>;
+        }else if (! props.checked &&  props.touched) {
+            iconElement = <i className="demo-icon icon-exclamation"></i>;
+        }
     }
 
     return (
         <div className={props.elementType === 'input' ? 'form-group' : 'check'}>
-            { props.elementType === 'input' && props.invalid && props.shouldValidate && props.touched ?  <i className="demo-icon icon-exclamation"></i> : '' }
-            { props.elementType === 'input' && !props.invalid && props.shouldValidate && props.touched ?  <i className="demo-icon icon-ok"></i> : '' }
-            {inputElement}
-            {labelElement}
+            { iconElement }
+            { inputElement }
+            { labelElement }
             {props.elementType === 'input' && props.invalid && props.shouldValidate && props.touched ?  <span className={'error-message'}> {props.errorMessage}</span> : ''}
         </div>
     )

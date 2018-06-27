@@ -75,6 +75,11 @@
     background-color: #FFF;
     border: 1px solid rgba(0, 0, 0, 0.15); }
 
+.contact .check:last-of-type  .contact__form__check_wrapper__fake_checkbox {
+    top: 20px;
+    left: 0;
+}
+
 .contact__form__check_wrapper__fake_checkbox.checkbox-error { border-color: #ce0237 !important; }
 
 .contact .contact__form  .contact__form__check_wrapper__fake_checkbox:hover { cursor: pointer; }
