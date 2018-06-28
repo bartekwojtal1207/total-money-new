@@ -6,8 +6,7 @@ const ContactTitle = (props) => {
     return (
         <div>
             <h3 className="contact__title">{props.children}</h3>
-            <span className="contact__subtitle">{props.subtitle}</span>
-            <Tooltip/>
+            <span className="contact__subtitle">{props.subtitle}<Tooltip/></span>
         </div>)
 };
 

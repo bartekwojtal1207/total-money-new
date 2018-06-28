@@ -37,10 +37,10 @@ input::-webkit-inner-spin-button {
     z-index: 0;
     font-size: 13px;
     top: -20px;
-    display: none;
+    visibility: hidden;
     color: #495057; }
 
-.contact .contact__form .contact__form__input:focus + span .contact__form__input_label { display: block }
+.contact .contact__form .contact__form__input:focus + span .contact__form__input_label { visibility: visible; }
 
 .contact__form__input::-webkit-input-placeholder { font-weight: normal;}
 
@@ -115,6 +115,7 @@ input::-webkit-inner-spin-button {
 .contact .contact__form input:checked + .contact__form__check_wrapper__fake_checkbox:after { display: block; }
 
 .contact .contact__form .contact__form__checkbox_label {
+    letter-spacing: .2px;
     font-size: 14px;
     display: inline;
     color: rgba(0, 0, 0, 0.6); }
@@ -166,13 +167,15 @@ input::-webkit-inner-spin-button {
 .error-message {
     font-size: 10px;
     color: red;
-    float: right; }
-
+    float: right;
+    position: relative;
+    top: 36px;
+}
 .icon-exclamation {
     float: right;
     color: red;
     position: absolute;
-    left: 385px;
+    left: 90%;
     z-index: 11;
 }
 
@@ -180,6 +183,6 @@ input::-webkit-inner-spin-button {
     position: absolute;
     color: green;
     float: right;
-    left: 385px;
+    left: 90%;
     z-index: 11;
 }

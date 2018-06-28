@@ -1,10 +1,11 @@
 .tooltip-contact {
     position: relative;
-    width: 24px;
+    width: 21px;
+    height: 21px;
     z-index: 50;
     float: right;
-    top: -27px;
-    left: 6px;
+    top: -5px;
+    left: 0px;
     border: 1px solid darkgrey;
     border-radius: 81%;
     text-align: center;

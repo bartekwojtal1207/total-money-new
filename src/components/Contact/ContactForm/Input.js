@@ -38,6 +38,7 @@ const Input = (props) => {
             inputElement =
                 <div className={! props.checked &&  props.touched ? 'form-check error-form-check': 'form-check'}>
                     <label className="form-check-label contact__form__checkbox_label" htmlFor={props.id}>{props.elementConfig.desc}</label>
+
                     <span onClick={props.showMoreText}> {! props.fullConsentVisible ? '[ więcej ]' : '[ mniej ]' }</span>
                     <span className={props.fullConsentVisible ? 'text-more' : 'text-more-hidden'}>{props.fullConsent}</span>
 
