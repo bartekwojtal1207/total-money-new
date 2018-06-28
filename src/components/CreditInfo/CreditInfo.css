@@ -16,13 +16,17 @@
 
 .credit .credit__info {
     padding-left: 0;
-    margin: 10px 0 9px 0; }
+    margin: 10px 0 6px 0; }
 
 .credit .credit__info .credit__info__list {
     font-size: 14px;
     padding-left: 0;
     list-style: none; }
-
+.text-credit__info__list__item .strong {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
 .credit .credit__hr {
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.1); }

@@ -7,7 +7,7 @@
 .contact .contact__form .contact__form__input.success { border-bottom-color: #57A403; }
 
 .contact .form-group:nth-last-of-type(2n+0) { margin-bottom: 15px; }
-/* inputs type text*/
+
 .contact .contact__form .contact__form__input {
     z-index: 10;
     position: absolute;
@@ -31,9 +31,6 @@ input::-webkit-inner-spin-button {
 }
 
 .contact__form__input:focus { border-bottom-color: #495057 !important; }
-
-/*input type text -> label*/
-
 
 .contact .contact__form .contact__form__input_label {
     position: relative;
@@ -118,8 +115,7 @@ input::-webkit-inner-spin-button {
 .contact .contact__form input:checked + .contact__form__check_wrapper__fake_checkbox:after { display: block; }
 
 .contact .contact__form .contact__form__checkbox_label {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 14px;
     display: inline;
     color: rgba(0, 0, 0, 0.6); }
 

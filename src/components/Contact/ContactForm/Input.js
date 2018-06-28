@@ -25,7 +25,7 @@ const Input = (props) => {
                 onChange={props.changed}
                 required={true}/>;
 
-            labelElement =  <Label label={props.elementConfig.desc} click={props.labelClick} className={props.value === '' ? 'contact__form__input_label' : 'contact__form__input_label_focused' }> </Label>;
+            labelElement =  <Label label={props.elementConfig.desc} className={props.value === '' ? 'contact__form__input_label' : 'contact__form__input_label_focused' }> </Label>;
 
             if (props.invalid && (props.shouldValidate && props.touched)) {
                 iconElement =  <i className="demo-icon icon-exclamation"></i>;

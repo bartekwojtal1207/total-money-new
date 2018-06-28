@@ -4,7 +4,7 @@ const Label = (props) => {
 
     return (
        <span>
-           <label className={props.className} onClick={props.click}>
+           <label className={props.className}>
                 {props.label}
             </label>
        </span>
