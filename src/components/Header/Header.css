@@ -14,3 +14,7 @@
 .header .header__hr {
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+@media only screen and (max-width: 767px) {
+    .header .header__title { margin-bottom: 35px; }
+}

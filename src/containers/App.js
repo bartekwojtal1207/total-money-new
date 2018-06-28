@@ -28,7 +28,14 @@ class App extends Component {
 
   render() {
         let widthScreen = this.state.width;
-        console.log(widthScreen)
+        let footerList = null;
+        if (widthScreen <= 767) {
+            footerList =  <ul className="footer__list_mobile">
+                <li className="footer__list__item"><a href="#">Polityka prywatności</a></li>
+                <li className="footer__list__item"><a href="#">Regulamin</a></li>
+            </ul>;
+        }
+
     return (
       <div className="App">
           <div className="container" style={{marginBottom: '50px'}}>
@@ -43,6 +50,7 @@ class App extends Component {
                       {widthScreen > 767 ? <Contact/> : ''}
                   </div>
               </div>
+              {footerList}
           </div>
           <Footer/>
       </div>

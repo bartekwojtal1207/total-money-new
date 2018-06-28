@@ -3,3 +3,20 @@ body {
   line-height: 24px; }
 .container {
   max-width: 905px; }
+
+.footer__list_mobile {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+}
+
+.footer__list_mobile .footer__list__item {
+  color: #a9a9a9;
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 7px;
+  opacity: .6; }
+
+.footer__list_mobile .footer__list__item a {
+  color: #a9a9a9;
+  text-decoration: none; }

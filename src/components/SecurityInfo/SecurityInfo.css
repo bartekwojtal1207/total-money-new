@@ -15,3 +15,7 @@
     margin-bottom: 0;
     display: inline-block;
     color: #a9a9a9; }
+
+@media only screen and (max-width: 767px) {
+    .security .security__container { padding-top: 20px; }
+}
