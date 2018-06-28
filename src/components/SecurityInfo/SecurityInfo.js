@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './SecurityInfo.css';
 import lock from '../../assets/img/lock.svg';
 import cert from '../../assets/img/cert.svg';
@@ -13,7 +13,7 @@ class SecurityInfo extends Component {
         this.state = {
             securityInfo: [
                 {text: 'Dbamy o bezpieczeństwo Twoich danych', img: lock},
-                {text: 'Twoje dane szyfruje i chroni certyfikat SSL',  img: cert},
+                {text: 'Twoje dane szyfruje i chroni certyfikat SSL', img: cert},
                 {text: 'Używamy najbezpieczniejszej metody szyfrowania', img: key}
             ]
         }
@@ -25,13 +25,13 @@ class SecurityInfo extends Component {
         );
 
         return (
-                <section className="security">
-                    <div className="col-md-12 security__container">
-                        <ul className="security__list">
-                            {securityInfoListItem}
-                        </ul>
-                    </div>
-                </section>
+            <section className="security">
+                <div className="col-md-12 security__container">
+                    <ul className="security__list">
+                        {securityInfoListItem}
+                    </ul>
+                </div>
+            </section>
         )
     }
 }

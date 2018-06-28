@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './Footer.css';
 import wpLogo from '../../assets/img/wp.png';
-
 
 
 class Footer extends Component {
@@ -15,8 +14,8 @@ class Footer extends Component {
                         <li className="footer__list__item"><a href="#">Regulamin</a></li>
                     </ul>
                     <div className="footer__wp_content">
-                        <img src={wpLogo} className="img img-fluid footer__wp_content__logo" alt="WP LOGO" />
-                            <span>Jesteśmy częścią Wirtualna Polska Holding S.A.</span>
+                        <img src={wpLogo} className="img img-fluid footer__wp_content__logo" alt="WP LOGO"/>
+                        <span>Jesteśmy częścią Wirtualna Polska Holding S.A.</span>
                     </div>
                 </div>
             </footer>
