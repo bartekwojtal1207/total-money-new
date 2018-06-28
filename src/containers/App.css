@@ -5,10 +5,9 @@ body {
   max-width: 905px; }
 
 .footer__list_mobile {
-  display: flex;
-  justify-content: center;
   padding-left: 0;
-}
+  display: flex;
+  justify-content: center;}
 
 .footer__list_mobile .footer__list__item {
   color: #a9a9a9;

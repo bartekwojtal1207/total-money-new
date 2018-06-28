@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import logo from '../logo.svg';
+import classes from './App.css';
 import Header from '../components/Header/Header';
 import CreditInfo from '../components/CreditInfo/CreditInfo';
 import SecurityInfo from '../components/SecurityInfo/SecurityInfo';
@@ -36,7 +38,7 @@ class App extends Component {
 
         return (
             <div className="App">
-                <div className="container" style={{marginBottom: '50px'}}>
+                <div className="container">
                     <div className="row">
                         <div className="col-md-6">
                             <Header/>

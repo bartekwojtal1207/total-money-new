@@ -28,6 +28,7 @@
 .footer .footer__wp_content .footer__wp_content__logo { margin-right: 5px; }
 
 @media only screen and (max-width: 767px) {
+    .footer { position: unset;}
     .footer .footer__list { display: none; }
 
     .footer .footer__wp_content {
