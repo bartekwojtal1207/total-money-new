@@ -29,7 +29,7 @@ class CreditInfo extends Component {
         
         return (
             <div>
-                <section className="credit row">
+                <section className="credit">
                     <div className="col-md-12 credit__company">
                         <img src={pkoLogo} className="img img-fluid credit__logo" alt="logo bank"/>
                             <h4 className="text-left credit__title">Kredyt mieszkaniowy Własny Kąt</h4>

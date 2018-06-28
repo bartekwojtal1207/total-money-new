@@ -25,7 +25,7 @@ class SecurityInfo extends Component {
         );
 
         return (
-                <section className="row security">
+                <section className="security">
                     <div className="col-md-12 security__container">
                         <ul className="security__list">
                             {securityInfoListItem}

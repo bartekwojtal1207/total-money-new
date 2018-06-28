@@ -226,7 +226,7 @@ class Contact extends Component {
 
         return(
             <div>
-                <section className="col-md-12 contact">
+                <section className="contact">
                     <ContactTitle subtitle={this.state.subtitle}>
                         Poznaj szczegóły oferty dla Ciebie <br />
                         Już nawet w 10 minut !
