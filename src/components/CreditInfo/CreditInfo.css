@@ -30,3 +30,7 @@
 .credit .credit__hr {
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+@media only screen and (max-width: 767px) {
+    .credit .credit__company .credit__logo { display: none; }
+}

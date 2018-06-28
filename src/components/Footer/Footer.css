@@ -3,9 +3,9 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 100;
     color: #a9a9a9;
     font-size: 14px;
-    z-index: 100;
     padding-top: 10px; }
 
 .footer .container { padding-left: 0; }
@@ -26,3 +26,14 @@
     display: inline-block; }
 
 .footer .footer__wp_content .footer__wp_content__logo { margin-right: 5px; }
+
+@media only screen and (max-width: 767px) {
+    .footer .footer__list { display: none; }
+
+    .footer .footer__wp_content {
+        float: none;
+        display: block;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+}
