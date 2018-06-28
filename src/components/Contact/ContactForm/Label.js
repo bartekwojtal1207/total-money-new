@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 
 const Label = (props) => {
-    this.state = {
-
-    }
 
     return (
        <span>

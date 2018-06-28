@@ -192,12 +192,8 @@ class Contact extends Component {
     handleSubmit = (event) => {
         let formIsValid = this.state.formIsValid;
 
-        if (formIsValid) { alert('wysłano formularz') }
+        if (formIsValid) { alert('wysłano formularz !') }
     };
-
-    labelClick = (event) => {
-//        this.setState({test: this.state.test2})
-    }
 
 
     render() {
@@ -208,6 +204,7 @@ class Contact extends Component {
                 config: this.state.contactForm[key]
             });
         }
+
 
         const form = <form action="#" className={'contact__form'} onSubmit={(event) => this.handleSubmit(event)}>
             {formElementsArray.map(formElement => (
@@ -226,8 +223,7 @@ class Contact extends Component {
                     errorMessage={this.state.errorMessage}
                     onFocus={(event)=>this.onFocusInputHandler(event, formElement.id)}
                     showMoreText={(event)=>this.showMoreText(event, formElement.id)}
-                    // labelClick={(event)=>this.labelClick(event, formElement.id)}
-                    // labelClass={this.state.test}
+                    // labelClass={labelTest}
                     changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
                 <Button>WYŚLIJ</Button>
